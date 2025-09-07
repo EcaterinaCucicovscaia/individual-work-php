@@ -41,23 +41,11 @@
 Откройте браузер и перейдите по адресу: http://localhost/mini-hotel/public/.
 
 📄 Структура проекта
-cpp
-Копировать код
-mini-hotel/
- ├─ app/
- │   └─ db.php                // Подключение к базе данных
- ├─ public/
- │   ├─ index.php             // Главная страница
- │   ├─ booking.php           // Форма бронирования
- │   ├─ review.php            // Форма отзывов
- │   ├─ login.php             // Форма входа для администратора
- │   ├─ admin.php             // Панель администратора
- │   ├─ logout.php            // Выход из сессии
- │   ├─ api.php               // REST API
- │   └─ css/
- │       └─ style.css         // Стили для сайта
- └─ sql/
-     └─ schema.sql            // Структура базы данных
+
+<img width="636" height="405" alt="image" src="https://github.com/user-attachments/assets/19da561c-6f5f-4b50-8e73-a3bdb14fca2a" />
+
+
+     
 🧩 Функциональные возможности
 Для всех пользователей
 Главная страница: Динамическое отображение информации о номерах, ресторане и мероприятиях.
@@ -95,7 +83,7 @@ REST API: Получение списка бронирований в форма
 📄 Примеры кода
 Форма бронирования (booking.php)
 
-php
+
 <form method="post">
     <input type="text" name="name" placeholder="Имя" required>
     <input type="text" name="phone" placeholder="Телефон" required>
@@ -106,7 +94,7 @@ php
 </form>
 
 Проверка администратора (login.php)
-php
+
 
 $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ? LIMIT 1");
 $stmt->execute([$username]);
@@ -120,7 +108,7 @@ if ($user && password_verify($password, $user['password'])) {
 }
 
 Получение списка бронирований через API (api.php)
-php
+
 
 $stmt = $pdo->query("SELECT id, room_id, name, phone, checkin, checkout, created_at FROM bookings ORDER BY created_at DESC");
 $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
